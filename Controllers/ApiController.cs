@@ -22,7 +22,7 @@ namespace backend.Controllers
         [HttpGet("version")]
         public IActionResult GetVersion()
         {
-            return Ok("0.0.2");
+            return Ok("0.0.3");
         }
 
         [HttpGet("data")]
