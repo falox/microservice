@@ -11,6 +11,7 @@ namespace backend.Controllers
     [Route("api")]
     public class ApiController : Controller
     {
+        private const string VERSION = "0.0.6";
         private readonly ILogger<ApiController> _logger;
         private static int _count;
 
@@ -22,13 +23,18 @@ namespace backend.Controllers
         [HttpGet("version")]
         public IActionResult GetVersion()
         {
-            return Ok("0.0.5");
+            return Ok(VERSION);
         }
 
         [HttpGet("data")]
         public IActionResult GetData()
         {
-            return Json(new { Count = ++_count, Host = System.Net.Dns.GetHostName() });
+            return Json(new 
+            { 
+                ApiVersion = VERSION,
+                Count = ++_count, 
+                Host = System.Net.Dns.GetHostName() 
+            });
         }
     }
 }
