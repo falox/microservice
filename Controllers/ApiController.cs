@@ -11,7 +11,7 @@ namespace backend.Controllers
     [Route("api")]
     public class ApiController : Controller
     {
-        private const string VERSION = "0.0.6";
+        private const string VERSION = "0.0.7";
         private readonly ILogger<ApiController> _logger;
         private static int _count;
 
